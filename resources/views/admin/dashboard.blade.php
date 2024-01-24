@@ -12,4 +12,5 @@
         @include('layout.footer')
     </div>
 </div>
+@yield('sidebar-content')
 @endsection

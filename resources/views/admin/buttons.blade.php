@@ -372,3 +372,7 @@
 
 </div>
 @endsection
+
+@section('sidebar-content')
+    @include('admin.sidebars.patient-form')
+@endsection
