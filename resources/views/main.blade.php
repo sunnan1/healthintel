@@ -7,6 +7,7 @@
     <title>HealthIntel</title>
 </head>
 @include('layout.files-header')
+@yield('header-content')
 <body class="authentication-bg position-relative">
     @include('layout.header')
     @yield('head')

@@ -161,7 +161,7 @@
                                             Please provide a valid zip.
                                         </div>
                                     </div>
-                                    <button class="btn btn-primary" type="submit">Submit form</button>
+                                    <a href="#theme-settings-offcanvas" class="btn btn-primary">Submit form</a>
                                 </form>
                             </div> <!-- end card-body-->
                         </div> <!-- end card-->
@@ -173,7 +173,6 @@
 
         </div> <!-- content -->
 @endsection
-
 @section('sidebar-content')
-    @include('admin.sidebars.patient-form')
+    @include('admin.sidebars.employee-form')
 @endsection

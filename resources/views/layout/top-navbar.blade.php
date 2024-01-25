@@ -320,7 +320,7 @@
             </li>
 
             <li class="d-none d-sm-inline-block">
-                <a class="nav-link" data-bs-toggle="offcanvas" href="ui-buttons.html#theme-settings-offcanvas">
+                <a class="nav-link" data-bs-toggle="offcanvas" href="#theme-settings-offcanvas">
                     <i class="ri-settings-3-fill fs-22"></i>
                 </a>
             </li>
