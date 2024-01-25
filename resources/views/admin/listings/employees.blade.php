@@ -27,7 +27,8 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="header-title">{{ $pageData['title'] ?? '' }}</h4>
-                        <a href="#theme-settings-offcanvas" data-bs-toggle="offcanvas" type="button" class="btn btn-primary rounded-pill" style="float: right;">Add Employee</a>        
+                        <button href="#theme-settings-offcanvas" data-bs-toggle="offcanvas" type="button" class="btn btn-info" style="float: right;"><i class="ri-add-fill"></i> Add Employee</button>
+                        <br>
                         <br>
                         <br>
                         <table id="basic-datatable" class="table table-striped dt-responsive nowrap w-100">
