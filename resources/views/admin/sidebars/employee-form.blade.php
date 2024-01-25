@@ -1,166 +1,113 @@
-<div class="offcanvas offcanvas-end" tabindex="-1" id="theme-settings-offcanvas">
-    <div class="d-flex align-items-center bg-primary p-3 offcanvas-header">
-        <h5 class="text-white m-0">Theme Settings</h5>
+<div class="offcanvas offcanvas-end" style="width: 50%;" tabindex="-1" id="theme-settings-offcanvas">
+    <div class="d-flex align-items-center bg-info p-3 offcanvas-header">
+        <h5 class="text-white m-0">Employee Registration</h5>
         <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-
+    <form action="" class="needs-validation" method="POST" novalidate>
     <div class="offcanvas-body p-0">
         <div data-simplebar class="h-100">
             <div class="card mb-0 p-3">
-                <div class="alert alert-warning" role="alert">
-                    <strong>Customize </strong> the overall color scheme, sidebar menu, etc.
-                </div>
 
-                <h5 class="mt-0 fs-16 fw-bold mb-3">Choose Layout</h5>
-                <div class="d-flex flex-column gap-2">
-                    <div class="form-check form-switch">
-                        <input id="customizer-layout01" name="data-layout" type="checkbox" value="vertical" class="form-check-input">
-                        <label class="form-check-label" for="customizer-layout01">Vertical</label>
-                    </div>
-                    <div class="form-check form-switch">
-                        <input id="customizer-layout02" name="data-layout" type="checkbox" value="horizontal" class="form-check-input">
-                        <label class="form-check-label" for="customizer-layout02">Horizontal</label>
-                    </div>
-                </div>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button fw-medium" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                Demographics
+                            </button>
+                        </h2>
 
-                <h5 class="my-3 fs-16 fw-bold">Color Scheme</h5>
-
-                <div class="d-flex flex-column gap-2">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" name="data-bs-theme" id="layout-color-light" value="light">
-                        <label class="form-check-label" for="layout-color-light">Light</label>
-                    </div>
-
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" name="data-bs-theme" id="layout-color-dark" value="dark">
-                        <label class="form-check-label" for="layout-color-dark">Dark</label>
-                    </div>
-                </div>
-
-                <div id="layout-width">
-                    <h5 class="my-3 fs-16 fw-bold">Layout Mode</h5>
-
-                    <div class="d-flex flex-column gap-2">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" name="data-layout-mode" id="layout-mode-fluid" value="fluid">
-                            <label class="form-check-label" for="layout-mode-fluid">Fluid</label>
-                        </div>
-
-                        <div id="layout-boxed">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" name="data-layout-mode" id="layout-mode-boxed" value="boxed">
-                                <label class="form-check-label" for="layout-mode-boxed">Boxed</label>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="row mb-3">
+                                    <div class="col-lg-4">
+                                        <label for="simpleinput" class="form-label">Employee Code</label>
+                                        <input type="text" id="employeeCode" class="form-control" name="employeecode">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-lg-4">
+                                        <label for="firstname" class="form-label">First Name</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="firstname" class="form-control" required>
+                                            <div class="invalid-feedback">
+                                                Please enter First Name
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="middlename" class="form-label">Middle Name</label>
+                                        <input type="text" id="middlename" class="form-control">
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="lastname" class="form-label">Last Name</label>
+                                        <input type="text" id="lastname" class="form-control">
+                                        <div class="invalid-feedback">
+                                            Please enter Last Name
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-lg-4">
+                                        <label for="simpleinput" class="form-label">Father Name</label>
+                                        <input type="text" id="simpleinput" class="form-control">
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="simpleinput" class="form-label">Husband Name</label>
+                                        <input type="text" id="simpleinput" class="form-control">
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="simpleinput" class="form-label">Gender</label>
+                                        <select class="form-select" id="example-select">
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div id="layout-detached">
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" name="data-layout-mode" id="data-layout-detached" value="detached">
-                                <label class="form-check-label" for="data-layout-detached">Detached</label>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Accordion Item #2
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse
+                                plugin adds the appropriate classes that we use to style each element. These classes control the overall
+                                appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with
+                                custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go
+                                within the <code>.accordion-body</code>, though the transition does limit overflow.
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <h5 class="my-3 fs-16 fw-bold">Topbar Color</h5>
-
-                <div class="d-flex flex-column gap-2">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" name="data-topbar-color" id="topbar-color-light" value="light">
-                        <label class="form-check-label" for="topbar-color-light">Light</label>
-                    </div>
-
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" name="data-topbar-color" id="topbar-color-dark" value="dark">
-                        <label class="form-check-label" for="topbar-color-dark">Dark</label>
-                    </div>
-
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" name="data-topbar-color" id="topbar-color-brand" value="brand">
-                        <label class="form-check-label" for="topbar-color-brand">Brand</label>
-                    </div>
-                </div>
-
-                <div>
-                    <h5 class="my-3 fs-16 fw-bold">Menu Color</h5>
-
-                    <div class="d-flex flex-column gap-2">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" name="data-menu-color" id="leftbar-color-light" value="light">
-                            <label class="form-check-label" for="leftbar-color-light">Light</label>
-                        </div>
-
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" name="data-menu-color" id="leftbar-color-dark" value="dark">
-                            <label class="form-check-label" for="leftbar-color-dark">Dark</label>
-                        </div>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" name="data-menu-color" id="leftbar-color-brand" value="brand">
-                            <label class="form-check-label" for="leftbar-color-brand">Brand</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="sidebar-size">
-                    <h5 class="my-3 fs-16 fw-bold">Sidebar Size</h5>
-
-                    <div class="d-flex flex-column gap-2">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-default" value="default">
-                            <label class="form-check-label" for="leftbar-size-default">Default</label>
-                        </div>
-
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-compact" value="compact">
-                            <label class="form-check-label" for="leftbar-size-compact">Compact</label>
-                        </div>
-
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-small" value="condensed">
-                            <label class="form-check-label" for="leftbar-size-small">Condensed</label>
-                        </div>
-
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-small-hover" value="sm-hover">
-                            <label class="form-check-label" for="leftbar-size-small-hover">Hover View</label>
-                        </div>
-
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-full" value="full">
-                            <label class="form-check-label" for="leftbar-size-full">Full Layout</label>
-                        </div>
-
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-fullscreen" value="fullscreen">
-                            <label class="form-check-label" for="leftbar-size-fullscreen">Fullscreen Layout</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="layout-position">
-                    <h5 class="my-3 fs-16 fw-bold">Layout Position</h5>
-
-                    <div class="btn-group checkbox" role="group">
-                        <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-fixed" value="fixed">
-                        <label class="btn btn-soft-primary w-sm" for="layout-position-fixed">Fixed</label>
-
-                        <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-scrollable" value="scrollable">
-                        <label class="btn btn-soft-primary w-sm ms-0" for="layout-position-scrollable">Scrollable</label>
-                    </div>
-                </div>
-
-                <div id="sidebar-user">
-                    <div class="d-flex justify-content-between align-items-center mt-3">
-                        <label class="fs-16 fw-bold m-0" for="sidebaruser-check">Sidebar User Info</label>
-                        <div class="form-check form-switch">
-                            <input type="checkbox" class="form-check-input" name="sidebar-user" id="sidebaruser-check">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Accordion Item #3
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse
+                                plugin adds the appropriate classes that we use to style each element. These classes control the overall
+                                appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with
+                                custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go
+                                within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
         </div>
-
     </div>
     <div class="offcanvas-footer border-top p-3 text-center">
         <div class="row">
@@ -168,8 +115,9 @@
                 <button type="button" class="btn btn-light w-100" id="reset-layout">Reset</button>
             </div>
             <div class="col-6">
-                <a href="form-validation.html#" role="button" class="btn btn-primary w-100">Buy Now</a>
+                <a href="form-validation.html#" role="button" class="btn btn-primary w-100">Submit</a>
             </div>
         </div>
     </div>
-</div>  
+    </form>
+</div>
