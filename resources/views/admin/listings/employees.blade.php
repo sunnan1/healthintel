@@ -8,6 +8,7 @@
     <link href="assets/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
 @endsection
 @section('main-content')
+
 <div class="content">
     <div class="container-fluid">
         <div class="row">
@@ -42,8 +43,6 @@
                                     <th>Salary</th>
                                 </tr>
                             </thead>
-                        
-                        
                             <tbody>
                                 <tr>
                                     <td>Tiger Nixon</td>

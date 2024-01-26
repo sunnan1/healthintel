@@ -1,13 +1,18 @@
 <div class="offcanvas offcanvas-end" style="width: 50%;" tabindex="-1" id="theme-settings-offcanvas">
     <div class="d-flex align-items-center bg-info p-3 offcanvas-header">
-        <h5 class="text-white m-0">Employee Registration</h5>
+        <h5 class="text-white m-0">Employee Details</h5>
         <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <form action="" class="needs-validation" method="POST" novalidate>
     <div class="offcanvas-body p-0">
         <div data-simplebar class="h-100">
             <div class="card mb-0 p-3">
-
+                <div class="row mb-3">
+                    <div class="col-lg-4">
+                        <label for="simpleinput" class="form-label">Employee Code</label>
+                        <input type="text" id="employeeCode" class="form-control" name="employeecode" readonly>
+                    </div>
+                </div>
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
@@ -20,12 +25,7 @@
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                              data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <div class="row mb-3">
-                                    <div class="col-lg-4">
-                                        <label for="simpleinput" class="form-label">Employee Code</label>
-                                        <input type="text" id="employeeCode" class="form-control" name="employeecode">
-                                    </div>
-                                </div>
+                                
                                 <div class="row mb-3">
                                     <div class="col-lg-4">
                                         <label for="firstname" class="form-label">First Name</label>
@@ -38,7 +38,9 @@
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="middlename" class="form-label">Middle Name</label>
-                                        <input type="text" id="middlename" class="form-control">
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="middleName" class="form-control" required>
+                                        </div>
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="lastname" class="form-label">Last Name</label>
