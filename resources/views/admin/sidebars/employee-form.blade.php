@@ -21,11 +21,9 @@
                                 Demographics
                             </button>
                         </h2>
-
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                              data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                
                                 <div class="row mb-3">
                                     <div class="col-lg-4">
                                         <label for="firstname" class="form-label">First Name</label>
@@ -44,27 +42,108 @@
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="lastname" class="form-label">Last Name</label>
-                                        <input type="text" id="lastname" class="form-control">
-                                        <div class="invalid-feedback">
-                                            Please enter Last Name
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="lastname" class="form-control">
+                                            <div class="invalid-feedback">
+                                                Please enter Last Name
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-lg-4">
                                         <label for="simpleinput" class="form-label">Father Name</label>
-                                        <input type="text" id="simpleinput" class="form-control">
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="simpleinput" class="form-control">
+                                        </div>
                                     </div>
                                     <div class="col-lg-4">
-                                        <label for="simpleinput" class="form-label">Husband Name</label>
-                                        <input type="text" id="simpleinput" class="form-control">
+                                        <label for="simpleinput" class="form-label">Spouse Name</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="simpleinput" class="form-control">
+                                        </div>
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="simpleinput" class="form-label">Gender</label>
-                                        <select class="form-select" id="example-select">
-                                            <option value="Male">Male</option>
-                                            <option value="Female">Female</option>
-                                        </select>
+                                        <div class="input-group input-group-merge">
+                                            <select class="form-select" id="example-select">
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-lg-4">
+                                        <label for="cnic" class="form-label">CNIC</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="cnic" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="passportno" class="form-label">Passport #</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="passportno" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="simpleinput" class="form-label">Birth Country</label>
+                                        <div class="input-group input-group-merge">
+                                            <select class="form-select" id="example-select">
+                                                <option value="Pakistan">Pakistan</option>
+                                                <option value="India">India</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-lg-4">
+                                        <label for="dob" class="form-label">Date of Birth</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="date" id="dob" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="age" class="form-label">Age</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="number" id="age" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="employeecategory" class="form-label">Employee Category</label>
+                                        <div class="input-group input-group-merge">
+                                            <select class="form-select" id="employeecategory">
+                                                <option value="CLINICAL">Clinical</option>
+                                                <option value="DOCTOR">Doctor</option>
+                                                <option value="NURSE">Nurse</option>
+                                                <option value="NON-CLINICAL">NON-Clinical</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-lg-4">
+                                        <label for="martialstatus" class="form-label">Martial Status</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="martialstatus" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="bloodgroup" class="form-label">Blood Group</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="bloodgroup" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="religion" class="form-label">Religion</label>
+                                        <div class="input-group input-group-merge">
+                                            <select class="form-select" id="religion">
+                                                <option value="Islam">Islam</option>
+                                                <option value="Hindu">Hindu</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -74,17 +153,46 @@
                         <h2 class="accordion-header" id="headingTwo">
                             <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Accordion Item #2
+                                Contact Details
                             </button>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                              data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse
-                                plugin adds the appropriate classes that we use to style each element. These classes control the overall
-                                appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with
-                                custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go
-                                within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                <div class="row mb-3">
+                                    <div class="col-lg-4">
+                                        <label for="Landline" class="form-label">Landline #</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="Landline" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="Mobile" class="form-label">Mobile #</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="Mobile" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="workmobile" class="form-label">Work Mobile</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="workmobile" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-lg-6">
+                                        <label for="email" class="form-label">Email</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="email" id="email" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label for="workemail" class="form-label">Work Email</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="workemail" class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -92,22 +200,79 @@
                         <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Accordion Item #3
+                                Address Details
                             </button>
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                              data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse
-                                plugin adds the appropriate classes that we use to style each element. These classes control the overall
-                                appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with
-                                custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go
-                                within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                <div class="row mb-3">
+                                    <div class="col-lg-4">
+                                        <label for="country" class="form-label">Country</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="country" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="province" class="form-label">Province</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="province" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label for="city" class="form-label">City</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="city" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-lg-12">
+                                        <label for="permanentaddress" class="form-label">Permanent Address</label>
+                                        <div class="input-group input-group-merge">
+                                            <textarea class="form-control" id="permanentaddress" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-lg-3">
+                                        <label for="postalcode" class="form-label">Postal Code</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="postalcode" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Emergency Contact
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="row mb-3">
+                                    <div class="col-lg-6">
+                                        <label for="contactpreson" class="form-label">Contact Person</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="contactpreson" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label for="contactno" class="form-label">Contact #</label>
+                                        <div class="input-group input-group-merge">
+                                            <input type="text" id="contactno" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -123,3 +288,4 @@
     </div>
     </form>
 </div>
+

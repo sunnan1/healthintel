@@ -13,13 +13,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <div class="page-title-box justify-content-between d-flex align-items-md-center flex-md-row flex-column">     
+                <div class="page-title-box justify-content-between d-flex align-items-md-center flex-md-row flex-column">
                     <h4 class="page-title">{{ $pageData['main'] ?? '' }}</h4>
-                    <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item"><a href="javascript: void(0);">Jidox</a></li>
-                        <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                        <li class="breadcrumb-item active">Data Tables</li>
-                    </ol>
                 </div>
             </div>
         </div>
@@ -28,7 +23,9 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="header-title">{{ $pageData['title'] ?? '' }}</h4>
-                        <button href="#theme-settings-offcanvas" data-bs-toggle="offcanvas" type="button" class="btn btn-info" style="float: right;"><i class="ri-add-fill"></i> Add Employee</button>
+                        <button href="#theme-settings-offcanvas" data-bs-toggle="offcanvas" type="button" class="btn btn-info" style="float: right;">
+                            <i class="ri-add-fill"></i> Add Employee
+                        </button>
                         <br>
                         <br>
                         <br>
@@ -269,7 +266,7 @@
                                     <td>$137,500</td>
                                 </tr>
                             </tbody>
-                        </table>       
+                        </table>
 
                     </div> <!-- end card body-->
                 </div> <!-- end card -->
