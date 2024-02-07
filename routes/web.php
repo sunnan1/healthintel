@@ -3,6 +3,8 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\DepartmentController;
+use \App\Http\Controllers\SectionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,8 +21,11 @@ Route::get('/', [AuthController::class , 'login']);
 Route::post('/login', [AuthController::class , 'postLogin']);
 Route::get('/dashboard', [DashboardController::class, 'showDashboard']);
 Route::get('/employees', [EmployeeController::class, 'showEmployeeList']);
+Route::get('/departments',[DepartmentController::class,'showDepartmentList']);
+Route::get('/sections',[SectionController::class,'showSectionList']);
+
 
 // Route::group(['middleware' => ['auth']] , function() {
-    
+
 // });
 
