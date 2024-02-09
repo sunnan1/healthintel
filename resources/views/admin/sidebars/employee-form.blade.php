@@ -3,7 +3,9 @@
         <h5 class="text-white m-0">Employee Details</h5>
         <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <form action="" class="needs-validation" method="POST" novalidate>
+    <form action="{{ url('save-employee') }}" class="needs-validation" method="POST" novalidate>
+        {{ csrf_field() }}
+        <input type="hidden" name="employeeId">
     <div class="offcanvas-body p-0">
         <div data-simplebar class="h-100">
             <div class="card mb-0 p-3">
@@ -13,22 +15,37 @@
                         <input type="text" id="employeeCode" class="form-control" name="employeecode" readonly>
                     </div>
                 </div>
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button fw-medium" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                    aria-expanded="true" aria-controls="collapseOne">
+
+                    <ul class="nav nav-tabs nav-justified nav-bordered mb-3">
+                        <li class="nav-item">
+                            <a href="#demographics-b2" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">
                                 Demographics
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                             data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact-b2" data-bs-toggle="tab" aria-expanded="true" class="nav-link">
+                                Contact Details
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#address-b2" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                                Address Details
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#emergency-b2" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                                Emergency Contact
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane show active" id="demographics-b2">
                                 <div class="row mb-3">
                                     <div class="col-lg-4">
                                         <label for="firstname" class="form-label">First Name</label>
                                         <div class="input-group input-group-merge">
-                                            <input type="text" id="firstname" class="form-control" required>
+                                            <input type="text" id="firstname" class="form-control" name="firstName" required>
                                             <div class="invalid-feedback">
                                                 Please enter First Name
                                             </div>
@@ -37,13 +54,13 @@
                                     <div class="col-lg-4">
                                         <label for="middlename" class="form-label">Middle Name</label>
                                         <div class="input-group input-group-merge">
-                                            <input type="text" id="middleName" class="form-control" required>
+                                            <input type="text" id="middleName" class="form-control" name="middleName" required>
                                         </div>
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="lastname" class="form-label">Last Name</label>
                                         <div class="input-group input-group-merge">
-                                            <input type="text" id="lastname" class="form-control">
+                                            <input type="text" id="lastname" name="lastName" class="form-control">
                                             <div class="invalid-feedback">
                                                 Please enter Last Name
                                             </div>
@@ -54,19 +71,19 @@
                                     <div class="col-lg-4">
                                         <label for="simpleinput" class="form-label">Father Name</label>
                                         <div class="input-group input-group-merge">
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <input type="text" id="simpleinput" name="fatherName" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="simpleinput" class="form-label">Spouse Name</label>
                                         <div class="input-group input-group-merge">
-                                            <input type="text" id="simpleinput" class="form-control">
+                                            <input type="text" id="simpleinput" name="spouseName" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="simpleinput" class="form-label">Gender</label>
                                         <div class="input-group input-group-merge">
-                                            <select class="form-select" id="example-select">
+                                            <select class="form-select" name="gender" id="example-select">
                                                 <option value="Male">Male</option>
                                                 <option value="Female">Female</option>
                                             </select>
@@ -77,19 +94,19 @@
                                     <div class="col-lg-4">
                                         <label for="cnic" class="form-label">CNIC</label>
                                         <div class="input-group input-group-merge">
-                                            <input type="text" id="cnic" class="form-control">
+                                            <input type="text" id="cnic" name="cnic" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="passportno" class="form-label">Passport #</label>
                                         <div class="input-group input-group-merge">
-                                            <input type="text" id="passportno" class="form-control">
+                                            <input type="text" id="passportno" name="passportNo" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-lg-4">
                                         <label for="simpleinput" class="form-label">Birth Country</label>
                                         <div class="input-group input-group-merge">
-                                            <select class="form-select" id="example-select">
+                                            <select class="form-select" name="birthCountry" id="example-select">
                                                 <option value="Pakistan">Pakistan</option>
                                                 <option value="India">India</option>
                                             </select>
@@ -146,133 +163,116 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Contact Details
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                             data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <div class="row mb-3">
+                            <div class="row mb-3">
                                     <div class="col-lg-4">
-                                        <label for="Landline" class="form-label">Landline #</label>
+                                        <label for="religion" class="form-label">Department</label>
                                         <div class="input-group input-group-merge">
-                                            <input type="text" id="Landline" class="form-control">
+                                            <select class="form-select"  name="department">
+                                                <option value="">-- Select Department --</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-lg-4">
-                                        <label for="Mobile" class="form-label">Mobile #</label>
+                                        <label for="religion" class="form-label">Designation</label>
                                         <div class="input-group input-group-merge">
-                                            <input type="text" id="Mobile" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <label for="workmobile" class="form-label">Work Mobile</label>
-                                        <div class="input-group input-group-merge">
-                                            <input type="text" id="workmobile" class="form-control">
+                                            <select class="form-select" name="designation">
+                                                <option value="">-- Select Designation --</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row mb-3">
-                                    <div class="col-lg-6">
-                                        <label for="email" class="form-label">Email</label>
-                                        <div class="input-group input-group-merge">
-                                            <input type="email" id="email" class="form-control">
-                                        </div>
+                        </div>
+                        <div class="tab-pane" id="contact-b2">
+                            <div class="row mb-3">
+                                <div class="col-lg-4">
+                                    <label for="Landline" class="form-label">Landline #</label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="text" id="Landline" class="form-control">
                                     </div>
-                                    <div class="col-lg-6">
-                                        <label for="workemail" class="form-label">Work Email</label>
-                                        <div class="input-group input-group-merge">
-                                            <input type="text" id="workemail" class="form-control" required>
-                                        </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="Mobile" class="form-label">Mobile #</label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="text" id="Mobile" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="workmobile" class="form-label">Work Mobile</label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="text" id="workmobile" class="form-control">
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Address Details
-                            </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                             data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <div class="row mb-3">
-                                    <div class="col-lg-4">
-                                        <label for="country" class="form-label">Country</label>
-                                        <div class="input-group input-group-merge">
-                                            <input type="text" id="country" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <label for="province" class="form-label">Province</label>
-                                        <div class="input-group input-group-merge">
-                                            <input type="text" id="province" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <label for="city" class="form-label">City</label>
-                                        <div class="input-group input-group-merge">
-                                            <input type="text" id="city" class="form-control">
-                                        </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-6">
+                                    <label for="email" class="form-label">Email</label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="email" id="email" class="form-control">
                                     </div>
                                 </div>
-                                <div class="row mb-3">
-                                    <div class="col-lg-12">
-                                        <label for="permanentaddress" class="form-label">Permanent Address</label>
-                                        <div class="input-group input-group-merge">
-                                            <textarea class="form-control" id="permanentaddress" rows="5"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col-lg-3">
-                                        <label for="postalcode" class="form-label">Postal Code</label>
-                                        <div class="input-group input-group-merge">
-                                            <input type="text" id="postalcode" class="form-control">
-                                        </div>
+                                <div class="col-lg-6">
+                                    <label for="workemail" class="form-label">Work Email</label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="text" id="workemail" class="form-control" required>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFour">
-                            <button class="accordion-button fw-medium collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                Emergency Contact
-                            </button>
-                        </h2>
-                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                             data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <div class="row mb-3">
-                                    <div class="col-lg-6">
-                                        <label for="contactpreson" class="form-label">Contact Person</label>
-                                        <div class="input-group input-group-merge">
-                                            <input type="text" id="contactpreson" class="form-control">
-                                        </div>
+                        <div class="tab-pane" id="address-b2">
+                            <div class="row mb-3">
+                                <div class="col-lg-4">
+                                    <label for="country" class="form-label">Country</label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="text" id="country" class="form-control">
                                     </div>
-                                    <div class="col-lg-6">
-                                        <label for="contactno" class="form-label">Contact #</label>
-                                        <div class="input-group input-group-merge">
-                                            <input type="text" id="contactno" class="form-control">
-                                        </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="province" class="form-label">Province</label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="text" id="province" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="city" class="form-label">City</label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="text" id="city" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-12">
+                                    <label for="permanentaddress" class="form-label">Permanent Address</label>
+                                    <div class="input-group input-group-merge">
+                                        <textarea class="form-control" id="permanentaddress" rows="5"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-3">
+                                    <label for="postalcode" class="form-label">Postal Code</label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="text" id="postalcode" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="emergency-b2">
+                            <div class="row mb-3">
+                                <div class="col-lg-6">
+                                    <label for="contactpreson" class="form-label">Contact Person</label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="text" id="contactpreson" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="contactno" class="form-label">Contact #</label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="text" id="contactno" class="form-control">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </div>

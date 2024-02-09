@@ -23,7 +23,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="header-title">{{ $pageData['title'] ?? '' }}</h4>
-                        <button href="#theme-settings-offcanvas" data-bs-toggle="offcanvas" type="button" class="btn btn-info" style="float: right;">
+                        <button href="#theme-settings-offcanvas" data-bs-toggle="offcanvas" type="button" class="btn btn-info showDepartmentForm" style="float: right;">
                             <i class="ri-add-fill"></i> Add Department
                         </button>
                         <br>
@@ -33,151 +33,26 @@
                             <thead>
                                 <tr>
                                     <th>Department Full Name</th>
-                                    <th>Department Mnemonics</th>
+                                    <th>Department Short Name</th>
                                     <th>Active Status</th>
+                                    <th>Last Updated</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                            @foreach($pageData['data'] as $department)
                                 <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
+                                    <td>{{ $department->name }}</td>
+                                    <td>{{ $department->code }}</td>
+                                    <td>{{ is_null($department->deleted_at) ? 'Active' : 'In-Active' }}</td>
+                                    <td>{{ date('Y-m-d H:i:s' , strtotime($department->updated_at)) }}</td>
+                                    <td>
+                                        <a href="#theme-settings-offcanvas" id="showDepartmentForm" data-status="{{ is_null($department->deleted_at) ? 'Active' : 'In-Active' }}" data-id="{{ $department->id }}" data-name="{{ $department->name }}" data-code="{{ $department->code }}" data-bs-toggle="offcanvas">
+                                            <i class="bi bi-pencil-square me-3 fs-20"></i>
+                                        </a>
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <td>Garrett Winters</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                </tr>
-                                <tr>
-                                    <td>Ashton Cox</td>
-                                    <td>Junior Technical Author</td>
-                                    <td>San Francisco</td>
-                                </tr>
-                                <tr>
-                                    <td>Cedric Kelly</td>
-                                    <td>Senior Javascript Developer</td>
-                                    <td>Edinburgh</td>
-                                </tr>
-                                <tr>
-                                    <td>Airi Satou</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                </tr>
-                                <tr>
-                                    <td>Yuri Berry</td>
-                                    <td>Chief Marketing Officer (CMO)</td>
-                                    <td>New York</td>
-                                </tr>
-                                <tr>
-                                    <td>Caesar Vance</td>
-                                    <td>Pre-Sales Support</td>
-                                    <td>New York</td>
-                                </tr>
-                                <tr>
-                                    <td>Doris Wilder</td>
-                                    <td>Sales Assistant</td>
-                                    <td>Sidney</td>
-                                </tr>
-                                <tr>
-                                    <td>Angelica Ramos</td>
-                                    <td>Chief Executive Officer (CEO)</td>
-                                    <td>London</td>
-                                </tr>
-                                <tr>
-                                    <td>Gavin Joyce</td>
-                                    <td>Developer</td>
-                                    <td>Edinburgh</td>
-                                </tr>
-                                <tr>
-                                    <td>Jennifer Chang</td>
-                                    <td>Regional Director</td>
-                                    <td>Singapore</td>
-                                </tr>
-                                <tr>
-                                    <td>Brenden Wagner</td>
-                                    <td>Software Engineer</td>
-                                    <td>San Francisco</td>
-                                </tr>
-                                <tr>
-                                    <td>Fiona Green</td>
-                                    <td>Chief Operating Officer (COO)</td>
-                                    <td>San Francisco</td>
-                                </tr>
-                                <tr>
-                                    <td>Shou Itou</td>
-                                    <td>Regional Marketing</td>
-                                    <td>Tokyo</td>
-                                </tr>
-                                <tr>
-                                    <td>Michelle House</td>
-                                    <td>Integration Specialist</td>
-                                    <td>Sidney</td>
-                                </tr>
-                                <tr>
-                                    <td>Suki Burks</td>
-                                    <td>Developer</td>
-                                    <td>London</td>
-                                </tr>
-                                <tr>
-                                    <td>Prescott Bartlett</td>
-                                    <td>Technical Author</td>
-                                    <td>London</td>
-                                </tr>
-                                <tr>
-                                    <td>Gavin Cortez</td>
-                                    <td>Team Leader</td>
-                                    <td>San Francisco</td>
-                                </tr>
-                                <tr>
-                                    <td>Martena Mccray</td>
-                                    <td>Post-Sales support</td>
-                                    <td>Edinburgh</td>
-                                </tr>
-                                <tr>
-                                    <td>Unity Butler</td>
-                                    <td>Marketing Designer</td>
-                                    <td>San Francisco</td>
-                                </tr>
-                                <tr>
-                                    <td>Howard Hatfield</td>
-                                    <td>Office Manager</td>
-                                    <td>San Francisco</td>
-                                </tr>
-                                <tr>
-                                    <td>Hope Fuentes</td>
-                                    <td>Secretary</td>
-                                    <td>San Francisco</td>
-                                </tr>
-                                <tr>
-                                    <td>Vivian Harrell</td>
-                                    <td>Financial Controller</td>
-                                    <td>San Francisco</td>
-                                </tr>
-                                <tr>
-                                    <td>Timothy Mooney</td>
-                                    <td>Office Manager</td>
-                                    <td>London</td>
-                                </tr>
-                                <tr>
-                                    <td>Jackson Bradshaw</td>
-                                    <td>Director</td>
-                                    <td>New York</td>
-                                </tr>
-                                <tr>
-                                    <td>Olivia Liang</td>
-                                    <td>Support Engineer</td>
-                                    <td>Singapore</td>
-                                </tr>
-                                <tr>
-                                    <td>Brielle Williamson</td>
-                                    <td>Integration Specialist</td>
-                                    <td>New York</td>
-                                </tr>
-                                <tr>
-                                    <td>Herrod Chandler</td>
-                                    <td>Sales Assistant</td>
-                                    <td>San Francisco</td>
-                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
 
@@ -206,4 +81,26 @@
     <script src="assets/vendor/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
     <script src="assets/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
     <script src="assets/js/pages/demo.datatable-init.js"></script>
+
+
+    <script>
+        $(function () {
+            $("body").on('click' , "#showDepartmentForm" , function () {
+                $("body .departmentFormModal").find('#departmentname').val($(this).data('name'));
+                $("body .departmentFormModal").find('#departmentcode').val($(this).data('code'));
+                $("body .departmentFormModal").find('#departmentId').val($(this).data('id'));
+                if ($(this).data('status') == 'Active' ) {
+                    $("body .departmentFormModal").find('#activestatus').click();
+                }
+            });
+            $("body").on('click' , ".showDepartmentForm" , function () {
+                $("body .departmentFormModal").find('#departmentname').val('');
+                $("body .departmentFormModal").find('#departmentcode').val('');
+                $("body .departmentFormModal").find('#departmentId').val('');
+            });
+        });
+    </script>
+
+
+
 @endsection

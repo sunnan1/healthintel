@@ -25,6 +25,10 @@ Route::get('/departments',[DepartmentController::class,'showDepartmentList']);
 Route::get('/sections',[SectionController::class,'showSectionList']);
 
 
+Route::post('save-department' , [DepartmentController::class, 'saveDepartment']);
+Route::post('save-section' , [SectionController::class, 'saveSection']);
+
+
 // Route::group(['middleware' => ['auth']] , function() {
 
 // });

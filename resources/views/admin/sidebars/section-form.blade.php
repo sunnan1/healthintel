@@ -10,14 +10,9 @@
                 <div class="row mb-3">
                     <div class="col-lg-12">
                         <label for="departmentname" class="form-label">Department Name</label>
-                        <input type="text" id="departmentname" class="form-control" name="departmentname">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-lg-12">
-                        <label for="sectioncode" class="form-label">Section Mnemonics</label>
-                        <input type="text" id="sectioncode" class="form-control" name="sectioncode">
-
+                        <select class="form-control select2" data-toggle="select2">
+                            <option value="">-- Select Department --</option>
+                        </select>
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -26,6 +21,14 @@
                         <input type="text" id="sectionname" class="form-control" name="sectionname">
                     </div>
                 </div>
+                <div class="row mb-3">
+                    <div class="col-lg-12">
+                        <label for="sectioncode" class="form-label">Section Short Name</label>
+                        <input type="text" id="sectioncode" class="form-control" name="sectioncode">
+
+                    </div>
+                </div>
+
                 <div class="row mb-3">
                     <div class="col-lg-12">
                         <div class="form-check form-switch">
@@ -40,10 +43,10 @@
     <div class="offcanvas-footer border-top p-3 text-center">
         <div class="row">
             <div class="col-6">
-                <button type="button" class="btn btn-light w-100" id="reset-layout">Reset</button>
+                <button type="button" class="btn btn-light w-100"><i class="bi bi-trash me-3 fs-20"></i> <span>Reset</span> </button>
             </div>
             <div class="col-6">
-                <a href="form-validation.html#" role="button" class="btn btn-primary w-100">Submit</a>
+                <button type="submit" class="btn btn-success w-100"><i class="ri-save-3-line me-3 fs-20"></i> <span>Submit</span> </button>
             </div>
         </div>
     </div>

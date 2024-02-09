@@ -16,26 +16,26 @@ return new class extends Migration
             $table->foreignIdFor(\App\Models\Department::class,'department_id')->index();
             $table->string('code')->nullable();
             $table->string('name')->nullable();
-            $table->foreignIdFor(\App\Models\User::class,'created_by')->index();
-            $table->foreignIdFor(\App\Models\User::class,'updated_by')->index();
+            $table->foreignIdFor(\App\Models\User::class,'created_by')->index()->nullable();
+            $table->foreignIdFor(\App\Models\User::class,'updated_by')->index()->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
 
         Schema::table('employees',function (Blueprint $table){
-            $table->foreignIdFor(\App\Models\User::class,'created_by')->index();
-            $table->foreignIdFor(\App\Models\User::class,'updated_by')->index();
+            $table->foreignIdFor(\App\Models\User::class,'created_by')->index()->nullable();
+            $table->foreignIdFor(\App\Models\User::class,'updated_by')->index()->nullable();
         });
 
         Schema::table('designations',function (Blueprint $table){
             $table->string('code')->nullable();
-            $table->foreignIdFor(\App\Models\User::class,'created_by')->index();
-            $table->foreignIdFor(\App\Models\User::class,'updated_by')->index();
+            $table->foreignIdFor(\App\Models\User::class,'created_by')->index()->nullable();
+            $table->foreignIdFor(\App\Models\User::class,'updated_by')->index()->nullable();
         });
 
         Schema::table('departments',function (Blueprint $table){
-            $table->foreignIdFor(\App\Models\User::class,'created_by')->index();
-            $table->foreignIdFor(\App\Models\User::class,'updated_by')->index();
+            $table->foreignIdFor(\App\Models\User::class,'created_by')->index()->nullable();
+            $table->foreignIdFor(\App\Models\User::class,'updated_by')->index()->nullable();
             $table->softDeletes();
         });
     }
