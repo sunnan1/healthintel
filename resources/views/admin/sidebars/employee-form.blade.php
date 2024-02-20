@@ -169,6 +169,9 @@
                                         <div class="input-group input-group-merge">
                                             <select class="form-select"  name="department">
                                                 <option value="">-- Select Department --</option>
+                                                @foreach($pageData['department'] as $department)
+                                                    <option value="{{ $department->id }}">{{ $department->name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>

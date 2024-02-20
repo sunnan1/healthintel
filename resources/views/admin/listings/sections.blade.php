@@ -58,11 +58,11 @@
 @endsection
 @section('script')
 
-    <script>
-        $(function() {
-           $("body").on('click' , "#addSection" , function() {
-                alert();
-           });
-        });
-    </script>
+{{--    <script>--}}
+{{--        $(function() {--}}
+{{--           $("body").on('click' , "#addSection" , function() {--}}
+{{--                alert();--}}
+{{--           });--}}
+{{--        });--}}
+{{--    </script>--}}
 @endsection

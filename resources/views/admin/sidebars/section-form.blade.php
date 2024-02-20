@@ -12,6 +12,9 @@
                         <label for="departmentname" class="form-label">Department Name</label>
                         <select class="form-control select2" data-toggle="select2">
                             <option value="">-- Select Department --</option>
+                            @foreach($pageData['department'] as $department)
+                                <option value="{{ $department->id }}">{{ $department->name }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
