@@ -24,7 +24,7 @@
                     <div class="card-body">
                         <h4 class="header-title">{{ $pageData['title'] ?? '' }}</h4>
                         <button href="#theme-settings-offcanvas" data-bs-toggle="offcanvas" type="button" class="btn btn-info showDepartmentForm" style="float: right;">
-                            <i class="ri-add-fill"></i> Add Designation
+                            <i class="ri-add-fill"></i> Add Position
                         </button>
                         <br>
                         <br>
@@ -40,14 +40,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach($pageData['designation'] as $designation)
+                            @foreach($pageData['position'] as $position)
                                 <tr>
-                                    <td>{{ $designation->name }}</td>
-{{--                                    <td>{{ $department->code }}</td>--}}
-{{--                                    <td>{{ is_null($department->deleted_at) ? 'Active' : 'In-Active' }}</td>--}}
-{{--                                    <td>{{ date('Y-m-d H:i:s' , strtotime($department->updated_at)) }}</td>--}}
+                                    <td>{{ $position->name }}</td>
+                                    <td>{{ $position->code }}</td>
+                                    <td>{{ is_null($position->deleted_at) ? 'Active' : 'In-Active' }}</td>
+                                    <td>{{ date('Y-m-d H:i:s' , strtotime($position->updated_at)) }}</td>
                                     <td>
-                                        <a href="#theme-settings-offcanvas" id="showDepartmentForm" data-status="{{ is_null($designation->deleted_at) ? 'Active' : 'In-Active' }}" data-id="{{ $designation->id }}" data-name="{{ $designation->name }}" data-code="{{ $designation->code }}" data-bs-toggle="offcanvas">
+                                        <a href="#theme-settings-offcanvas" id="showDepartmentForm" data-status="{{ is_null($position->deleted_at) ? 'Active' : 'In-Active' }}" data-id="{{ $position->id }}" data-name="{{ $position->name }}" data-code="{{ $position->code }}" data-bs-toggle="offcanvas">
                                             <i class="bi bi-pencil-square me-3 fs-20"></i>
                                         </a>
                                     </td>
@@ -64,7 +64,7 @@
 </div>
 @endsection
 @section('sidebar-content')
-    @include('admin.sidebars.designation-form')
+    @include('admin.sidebars.position-form')
 @endsection
 @section('script')
     <script src="assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>

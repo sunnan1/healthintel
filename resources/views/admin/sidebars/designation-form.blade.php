@@ -10,6 +10,13 @@
         <div data-simplebar class="h-100">
             <div class="card mb-0 p-3">
                 <div class="row mb-3">
+                    <div class="row mb-3">
+                        <div class="col-lg-12">
+                            <label for="designationcode" class="form-label">Designation Mnemonics</label>
+                            <input type="text" id="designationcode" class="form-control" name="designationCode">
+
+                        </div>
+                    </div>
                     <div class="col-lg-12">
                         <label for="designation" class="form-label">Designation</label>
                         <input type="text" id="designation" class="form-control" name="designation">

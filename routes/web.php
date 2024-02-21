@@ -6,6 +6,8 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DepartmentController;
 use \App\Http\Controllers\SectionController;
 use \App\Http\Controllers\DesignationController;
+use \App\Http\Controllers\PositionController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,10 +27,13 @@ Route::get('/employees', [EmployeeController::class, 'showEmployeeList']);
 Route::get('/departments',[DepartmentController::class,'showDepartmentList']);
 Route::get('/sections',[SectionController::class,'showSectionList']);
 Route::get('/designations',[DesignationController::class,'showDesignationList']);
+Route::get('/positions',[PositionController::class,'showPositionList']);
 
 Route::post('save-department' , [DepartmentController::class, 'saveDepartment']);
 Route::post('save-section' , [SectionController::class, 'saveSection']);
 Route::post('save-designation',[DesignationController::class,'saveDesignation']);
+Route::post('save-employee',[EmployeeController::class,'saveEmployee']);
+Route::post('save-position',[PositionController::class,'savePosition']);
 
 
 

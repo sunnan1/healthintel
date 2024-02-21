@@ -20,9 +20,14 @@ class DesignationController extends Controller
 
     public function saveDesignation(Request $request)
     {
+//        dd($request->all());
         try {
             $designation = new Designation();
+            $designation->code = $request->get('designationCode');
             $designation->name = $request->get('designation');
+            if (!$request->has('activeStatus')){
+                $designation->delete();
+            }
             $designation->save();
 
         }catch (\Exception $exception)
