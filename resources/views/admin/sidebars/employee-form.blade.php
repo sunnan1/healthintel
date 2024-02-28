@@ -26,8 +26,6 @@
                             </div>
                         </div>
                     </div>
-
-
                         <ul class="nav nav-tabs nav-justified nav-bordered mb-3">
                             <li class="nav-item">
                                 <a href="#demographics-b2" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">
@@ -134,7 +132,7 @@
                                     <div class="col-lg-4">
                                         <label for="martialstatus" class="form-label">Martial Status</label>
                                         <div class="input-group input-group-merge">
-                                            <select class="form-select"  name="martialstatus">
+                                            <select class="form-select"  name="martialStatus">
                                                 <option value="">-- Select Status --</option>
                                                 @foreach($pageData['setting'] as $set)
                                                     @if($set->type == 'MARITAL_STATUS')
@@ -166,7 +164,7 @@
                                 <div class="col-lg-2">
                                     <label for="bloodgroup" class="form-label">Blood Group</label>
                                     <div class="input-group input-group-merge">
-                                        <select class="form-select"  name="bloodgroup">
+                                        <select class="form-select"  name="bloodGroup">
                                             <option value="">-- Select Blood Group --</option>
                                             @foreach($pageData['setting'] as $set)
                                                 @if($set->type == 'BLOOD_GROUP')
@@ -201,9 +199,9 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
-                                        <label for="employeecategory" class="form-label">Employee Category</label>
+                                        <label for="employeeCategory" class="form-label">Employee Category</label>
                                         <div class="input-group input-group-merge">
-                                            <select class="form-select" id="employeecategory">
+                                            <select class="form-select" id="employeeCategory" name="employeeCategory">
                                                 <option value="CLINICAL">Clinical</option>
                                                 <option value="DOCTOR">Doctor</option>
                                                 <option value="NURSE">Nurse</option>
@@ -212,9 +210,9 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
-                                        <label for="employeecategory" class="form-label">Position</label>
+                                        <label for="position" class="form-label">Position</label>
                                         <div class="input-group input-group-merge">
-                                            <select class="form-select" id="employeecategory">
+                                            <select class="form-select" id="position" name="position">
                                                 <option value="CLINICAL">Clinical</option>
                                                 <option value="DOCTOR">Doctor</option>
                                                 <option value="NURSE">Nurse</option>
@@ -229,19 +227,19 @@
                                 <div class="col-lg-4">
                                     <label for="Landline" class="form-label">Landline #</label>
                                     <div class="input-group input-group-merge">
-                                        <input type="text" id="Landline" class="form-control">
+                                        <input type="text" id="Landline" class="form-control" name="Landline">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="Mobile" class="form-label">Mobile #</label>
                                     <div class="input-group input-group-merge">
-                                        <input type="text" id="Mobile" class="form-control">
+                                        <input type="text" id="Mobile" class="form-control" name="Mobile">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
-                                    <label for="workmobile" class="form-label">Work Mobile</label>
+                                    <label for="workMobile" class="form-label">Work Mobile</label>
                                     <div class="input-group input-group-merge">
-                                        <input type="text" id="workmobile" class="form-control">
+                                        <input type="text" id="workMobile" class="form-control" name="workMobile">
                                     </div>
                                 </div>
                             </div>
@@ -253,9 +251,9 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
-                                    <label for="workemail" class="form-label">Work Email</label>
+                                    <label for="workEmail" class="form-label">Work Email</label>
                                     <div class="input-group input-group-merge">
-                                        <input type="text" id="workemail" class="form-control" required>
+                                        <input type="text" id="workEmail" class="form-control" name="workEmail">
                                     </div>
                                 </div>
                             </div>
@@ -265,35 +263,35 @@
                                 <div class="col-lg-4">
                                     <label for="country" class="form-label">Country</label>
                                     <div class="input-group input-group-merge">
-                                        <input type="text" id="country" class="form-control">
+                                        <input type="text" id="country" class="form-control" name="country">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="province" class="form-label">Province</label>
                                     <div class="input-group input-group-merge">
-                                        <input type="text" id="province" class="form-control">
+                                        <input type="text" id="province" class="form-control" name="province">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <label for="city" class="form-label">City</label>
                                     <div class="input-group input-group-merge">
-                                        <input type="text" id="city" class="form-control">
+                                        <input type="text" id="city" class="form-control" name="city">
                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-lg-12">
-                                    <label for="permanentaddress" class="form-label">Permanent Address</label>
+                                    <label for="permanentAddress" class="form-label">Permanent Address</label>
                                     <div class="input-group input-group-merge">
-                                        <textarea class="form-control" id="permanentaddress" rows="5"></textarea>
+                                        <textarea class="form-control" id="permanentAddress" rows="5" name="permanentAddress"></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-lg-3">
-                                    <label for="postalcode" class="form-label">Postal Code</label>
+                                    <label for="postalCode" class="form-label">Postal Code</label>
                                     <div class="input-group input-group-merge">
-                                        <input type="text" id="postalcode" class="form-control">
+                                        <input type="text" id="postalCode" class="form-control" name="postalCode">
                                     </div>
                                 </div>
                             </div>
@@ -301,15 +299,15 @@
                         <div class="tab-pane" id="emergency-b2">
                             <div class="row mb-3">
                                 <div class="col-lg-6">
-                                    <label for="contactpreson" class="form-label">Contact Person</label>
+                                    <label for="contactPerson" class="form-label">Contact Person</label>
                                     <div class="input-group input-group-merge">
-                                        <input type="text" id="contactpreson" class="form-control">
+                                        <input type="text" id="contactPerson" class="form-control" name="contactPerson">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
-                                    <label for="contactno" class="form-label">Contact #</label>
+                                    <label for="contactNo" class="form-label">Contact #</label>
                                     <div class="input-group input-group-merge">
-                                        <input type="text" id="contactno" class="form-control">
+                                        <input type="text" id="contactNo" class="form-control" name="contactNo">
                                     </div>
                                 </div>
                             </div>
