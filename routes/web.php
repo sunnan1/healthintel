@@ -28,12 +28,16 @@ Route::get('/departments',[DepartmentController::class,'showDepartmentList']);
 Route::get('/sections',[SectionController::class,'showSectionList']);
 Route::get('/designations',[DesignationController::class,'showDesignationList']);
 Route::get('/positions',[PositionController::class,'showPositionList']);
+Route::get('/schedules',[DashboardController::class,'showSchedule']);
+
 
 Route::post('save-department' , [DepartmentController::class, 'saveDepartment']);
 Route::post('save-section' , [SectionController::class, 'saveSection']);
 Route::post('save-designation',[DesignationController::class,'saveDesignation']);
 Route::post('save-employee',[EmployeeController::class,'saveEmployee']);
 Route::post('save-position',[PositionController::class,'savePosition']);
+Route::post('save-schedule',[DashboardController::class,'saveSchedule']);
+
 
 
 
